@@ -19,6 +19,43 @@
 };
 
 / {
+    behaviors {
+        tap_dance_H: tap_dance_H {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_H";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT>, <&kp HOME>;
+
+            tapping-term-ms = <150>;
+        };
+
+        tap_dance_J: tap_dance_J {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_J";
+            #binding-cells = <0>;
+            tapping-term-ms = <150>;
+            bindings = <&kp DOWN_ARROW>, <&kp PAGE_DOWN>;
+        };
+
+        tap_dance_K: tap_dance_K {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_K";
+            #binding-cells = <0>;
+            bindings = <&kp UP_ARROW>, <&kp PAGE_UP>;
+
+            tapping-term-ms = <150>;
+        };
+
+        tap_dance_l: tap_dance_l {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_L";
+            #binding-cells = <0>;
+            bindings = <&kp RIGHT_ARROW>, <&kp END>;
+
+            tapping-term-ms = <150>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -50,11 +87,11 @@
 
             display-name = "Lower";
             bindings = <
-&trans  &trans        &trans        &trans        &trans        &trans                          &trans        &trans         &trans        &trans        &trans         &trans
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                    &kp NUMBER_6  &kp NUMBER_7   &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0   &kp RIGHT_BRACKET
-&trans  &trans        &kp C_MUTE    &kp C_VOL_DN  &kp C_VOL_UP  &trans                          &kp LEFT      &kp DOWN       &kp UP        &kp RIGHT     &trans         &kp GRAVE
-&trans  &trans        &trans        &trans        &trans        &trans        &trans    &trans  &kp HOME      &kp PAGE_DOWN  &kp PAGE_UP   &kp END       &kp BACKSLASH  &mt RIGHT_SHIFT EQUAL
-                                    &trans        &trans        &trans        &trans    &trans  &kp LEFT_ALT  &trans         &trans
+&trans  &trans        &trans        &trans        &trans        &trans                          &trans        &trans        &trans        &trans        &trans         &trans
+&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                    &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0   &kp RIGHT_BRACKET
+&trans  &trans        &kp C_MUTE    &kp C_VOL_DN  &kp C_VOL_UP  &trans                          &tap_dance_H  &tap_dance_J  &tap_dance_K  &tap_dance_l  &trans         &kp GRAVE
+&trans  &trans        &trans        &trans        &trans        &trans        &trans    &trans  &trans        &trans        &trans        &trans        &kp BACKSLASH  &mt RIGHT_SHIFT EQUAL
+                                    &trans        &trans        &trans        &trans    &trans  &kp LEFT_ALT  &trans        &trans
             >;
         };
 
