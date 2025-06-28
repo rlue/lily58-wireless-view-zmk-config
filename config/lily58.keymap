@@ -11,11 +11,13 @@
 &lt {
     tapping-term-ms = <90>;
     quick-tap-ms = <150>;
+    flavor = "balanced";
 };
 
 &mt {
     tapping-term-ms = <90>;
     quick-tap-ms = <150>;
+    flavor = "balanced";
 };
 
 / {
